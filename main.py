@@ -1,26 +1,25 @@
+
 import tkinter as tk
 
+def greet():
+	name = entry.get()
+	if name.strip():
+		label.config(text=f"Hello, {name}!")
+	else:
+		label.config(text="Hello, World!")
 
-def main():
-  """
-      Creates and runs a simple Tkinter 'Hello, World!' application.
-          """
-  # Create the main application window
-  root = tk.Tk()
+root = tk.Tk()
+root.title("Hello, World! App")
 
-  # Set the title of the window
-  root.title("Hello Tkinter")
+entry = tk.Entry(root, width=30)
+entry.pack(pady=10)
 
-  # Create a label widget with the text "Hello, World!"
-  label = tk.Label(root, text="Hello, World!")
+button = tk.Button(root, text="Greet Me!", command=greet)
+button.pack(pady=5)
 
-  # Use the pack geometry manager to add the label to the window
-  # and add some padding around it.
-  label.pack(padx=20, pady=20)
+label = tk.Label(root, text="Hello, World!", font=("Arial", 16))
+label.pack(pady=10)
 
-  # Start the Tkinter event loop to display the window
-  root.mainloop()
+root.mainloop()
 
 
-if __name__ == "__main__":
-  main()
